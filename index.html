@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeMA UX라이팅 강연 자료</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#ede9e2;font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px 20px;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:640px}
+.header{margin-bottom:48px}
+.inst{font-size:11px;font-weight:500;letter-spacing:.18em;color:#888;text-transform:uppercase;margin-bottom:8px}
+.line{width:32px;height:1px;background:#1a1a1a;margin-bottom:32px}
+.title{font-family:'Noto Serif KR',serif;font-size:36px;font-weight:700;color:#1a1a1a;line-height:1.25;margin-bottom:12px}
+.sub{font-size:14px;font-weight:300;color:#666;line-height:1.7}
+.cards{display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
+.card{background:#fff;display:flex;align-items:stretch;text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 6px 24px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-bar{width:6px;background:#1a1a1a;flex-shrink:0}
+.card-body{padding:20px 24px;flex:1}
+.card-part{font-size:10px;font-weight:700;letter-spacing:.16em;color:#888;text-transform:uppercase;margin-bottom:6px}
+.card-title{font-family:'Noto Serif KR',serif;font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:6px}
+.card-desc{font-size:12.5px;color:#777;line-height:1.6}
+.card-count{font-size:11px;color:#bbb;margin-top:8px;letter-spacing:.05em}
+.card-arrow{display:flex;align-items:center;padding:0 20px;color:#ccc;font-size:18px;flex-shrink:0}
+.card:hover .card-arrow{color:#1a1a1a}
+.footer{font-size:11px;color:#aaa;letter-spacing:.06em;border-top:1px solid #d8d4cc;padding-top:20px}
+.badge{display:inline-block;font-size:10px;font-weight:500;background:#1a1a1a;color:#fff;padding:2px 9px;letter-spacing:.08em;margin-right:8px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="inst">서울시립미술관 · SeMA</div>
+    <div class="line"></div>
+    <h1 class="title">UX라이팅<br>강연 자료</h1>
+    <p class="sub">미술관 직원을 위한 UX라이팅 입문<br>총 4파트 · 51슬라이드</p>
+  </div>
+
+  <div class="cards">
+    <a class="card" href="sema_p1.html">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <div class="card-part">Part 1</div>
+        <div class="card-title">UX라이팅 개념 입문</div>
+        <div class="card-desc">UX라이팅의 정의, 좋은 글의 조건, Before / After 실습</div>
+        <div class="card-count">12슬라이드</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a class="card" href="sema_p2.html">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <div class="card-part">Part 2</div>
+        <div class="card-title">KRDS 기준 적용</div>
+        <div class="card-desc">공공기관 UX라이팅 표준 · 날짜·버튼·에러 메시지 규칙</div>
+        <div class="card-count">12슬라이드</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a class="card" href="sema_p3.html">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <div class="card-part">Part 3</div>
+        <div class="card-title">SeMA 사이트 현장 분석</div>
+        <div class="card-desc">실제 사이트에서 발견한 5가지 개선 지점 · Before / After</div>
+        <div class="card-count">15슬라이드</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a class="card" href="sema_p4.html">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <div class="card-part">Part 4</div>
+        <div class="card-title">실습 워크숍</div>
+        <div class="card-desc">3가지 실습 문제 · 자유 실습 · 체크리스트 · 레퍼런스 카드</div>
+        <div class="card-count">12슬라이드</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="footer">
+    <span class="badge">초안</span> 2026.04 · 최종본 4월 22일 확정 예정
+  </div>
+</div>
+</body>
+</html>
