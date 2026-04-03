@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>P4 · 실습 워크숍 — SeMA 강연</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;-webkit-font-smoothing:antialiased}
+body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo',sans-serif;-webkit-font-smoothing:antialiased}
 .wrapper{position:absolute;transform-origin:top left;width:960px}
 .stage{width:960px;height:540px;position:relative;box-shadow:0 8px 64px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.07)}
 .slide{position:absolute;inset:0;background:#fff;display:none;flex-direction:column;overflow:hidden}
@@ -29,7 +30,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Noto Sans KR',
 .cover-inst{font-size:10px;font-weight:500;letter-spacing:.18em;color:#888;text-transform:uppercase;margin-bottom:5px}
 .cover-line{width:28px;height:1px;background:#1a1a1a;margin-bottom:40px}
 .cover-cat{font-size:10px;font-weight:500;letter-spacing:.14em;color:#888;text-transform:uppercase;margin-bottom:12px}
-.cover-title{font-family:'Noto Serif KR',serif;font-size:52px;font-weight:700;color:#1a1a1a;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.cover-title{font-family:'Nanum Myeongjo',serif;font-size:52px;font-weight:700;color:#1a1a1a;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
 .cover-sub{font-size:13px;font-weight:300;color:#555;line-height:1.65;margin-bottom:auto;padding-bottom:36px}
 .cover-foot{border-top:1px solid #e8e8e8;padding-top:16px;display:flex;align-items:baseline;gap:16px}
 .cover-date{font-size:11px;color:#888}
@@ -38,7 +39,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Noto Sans KR',
 .content{padding:38px 52px 30px;display:flex;flex-direction:column;flex:1}
 .eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;color:#888;text-transform:uppercase;margin-bottom:10px}
 .eyebrow em{color:#c0392b;font-style:normal}
-.stitle{font-family:'Noto Serif KR',serif;font-size:25px;font-weight:700;color:#1a1a1a;line-height:1.3;margin-bottom:20px;border-bottom:1px solid #ebebeb;padding-bottom:14px}
+.stitle{font-family:'Nanum Myeongjo',serif;font-size:25px;font-weight:700;color:#1a1a1a;line-height:1.3;margin-bottom:20px;border-bottom:1px solid #ebebeb;padding-bottom:14px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .ba-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
@@ -57,7 +58,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Noto Sans KR',
 .ba-note{margin-top:7px;font-size:11px;line-height:1.5}
 .ba-before .ba-note{color:#999}
 .ba-after .ba-note{color:#2d6a2d}
-.callout{background:#1a1a1a;padding:16px 20px;display:flex;align-items:flex-start;gap:12px;margin-top:auto}
+.callout{background:#1a1a1a;padding:16px 20px;display:flex;align-items:flex-start;gap:12px;margin-top:16px}
 .callout-icon{font-size:16px;flex-shrink:0;margin-top:1px}
 .callout-text{font-size:12.5px;color:#fff;line-height:1.6;font-weight:300}
 .callout-text strong{font-weight:700;color:#f0c674}
@@ -93,7 +94,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Noto Sans KR',
 .step-list{display:flex;flex-direction:column;flex:1}
 .step-item{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid #f2f2f2}
 .step-item:last-child{border-bottom:none}
-.step-num{font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;color:#e0e0e0;flex-shrink:0;width:28px;line-height:1}
+.step-num{font-family:'Nanum Myeongjo',serif;font-size:20px;font-weight:700;color:#e0e0e0;flex-shrink:0;width:28px;line-height:1}
 .step-body{flex:1;padding-top:2px}
 .step-title{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:2px}
 .step-desc{font-size:11.5px;color:#666;line-height:1.5}
@@ -408,7 +409,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Noto Sans KR',
       <div class="content">
         <div class="eyebrow">내일부터 바로 &nbsp;·&nbsp; 개인 체크리스트</div>
         <h2 class="stitle">강연 후 바로 쓰는 UX라이팅 체크리스트</h2>
-        <div class="check-list" style="flex:1">
+        <div class="check-list" style="flex:none">
           <div class="check-item">
             <div class="check-box">□</div>
             <div class="check-text">
@@ -459,7 +460,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Noto Sans KR',
       <div class="content">
         <div class="eyebrow">참고 자료 &nbsp;·&nbsp; 실무 레퍼런스</div>
         <h2 class="stitle">상황별 UX라이팅 레퍼런스 카드</h2>
-        <div class="grid2" style="gap:12px;flex:1">
+        <div class="grid2" style="gap:12px">
           <div class="guide-box" style="background:#1a1a1a">
             <div class="guide-section">
               <div class="guide-sec-title">📅 날짜·시간</div>
