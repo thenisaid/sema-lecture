@@ -121,7 +121,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
         <h1 class="cover-title">현장에서<br>발견한<br>것들</h1>
         <p class="cover-sub">
           SeMA 사이트 실제 사례 분석<br>
-          KRDS 기준으로 진단한 개선 기회 5가지
+          KRDS 기준으로 진단한 개선 기회 10가지
         </p>
         <div class="cover-foot">
           <span class="cover-date">2026.04</span>
@@ -150,7 +150,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           <div class="card">
             <div class="card-icon">📋</div>
             <div class="card-head">발견 결과</div>
-            <div class="card-desc">5가지 개선 기회 — 즉시 가능 3개 + 중기 과제 2개</div>
+            <div class="card-desc">10가지 개선 기회 — 즉시 가능 7개 + 중기 과제 3개</div>
           </div>
         </div>
         <div class="callout">
@@ -365,6 +365,159 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
       </div>
     </section>
 
+    <!-- NEW: 발견 ⑥ — FAQ 3중 오류 (F8) -->
+    <section class="slide" id="s-f8">
+      <div class="content">
+        <div class="eyebrow">발견 &nbsp;⑥ &nbsp;<em>★★★</em></div>
+        <h2 class="stitle">FAQ 페이지 — 3중 오류</h2>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:14px">
+          <div class="finding-card">
+            <div class="finding-num">① 오타</div>
+            <div class="finding-title">"훨체어" → "휠체어"</div>
+            <div class="finding-desc">FAQ 질문 제목에 오타. 같은 분관 다른 질문에서는 "휠체어"로 올바르게 표기 — 일관성도 없음.</div>
+          </div>
+          <div class="finding-card">
+            <div class="finding-num">② 띄어쓰기</div>
+            <div class="finding-title">페이지 타이틀 "자주묻는질문" → "자주 묻는 질문"</div>
+            <div class="finding-desc">한국어 맞춤법상 각 단어는 띄어 씀. &lt;title&gt; 태그에도 반영되어 SEO 및 스크린리더에 영향.</div>
+          </div>
+          <div class="finding-card">
+            <div class="finding-num">③ 접근성 (KWCAG 4.1.2)</div>
+            <div class="finding-title">아코디언 상태 "축소됨" 텍스트 콘텐츠에 혼입</div>
+            <div class="finding-desc">스크린리더 출력: "유모차와 휠체어를 대여할 수 있나요? 서울시립 미술아카이브 축소됨" — ARIA 역할 분리 없이 상태값 노출.</div>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-icon">⚡</div>
+          <div class="callout-text">
+            ①②는 텍스트 수정으로 즉시 해결. <strong>③은 WA 접근성 인증 기관으로서 직접 모순</strong><br>
+            <code style="background:#333;padding:1px 5px;font-size:11px;border-radius:2px">&lt;span class="sr-only"&gt;축소됨&lt;/span&gt;</code> — ARIA 분리로 해결 가능.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: 발견 ⑦ — 날짜 플레이스홀더 (F6) -->
+    <section class="slide" id="s-f6">
+      <div class="content">
+        <div class="eyebrow">발견 &nbsp;⑦ &nbsp;<em>★★★</em></div>
+        <h2 class="stitle">날짜 입력 플레이스홀더 "YYYYMMDD"</h2>
+        <div class="ba-wrap">
+          <div class="ba-col ba-before">
+            <div class="ba-label"><span class="ba-dot"></span>현재 — 전시·프로그램 날짜 필터 입력</div>
+            <div style="margin-bottom:12px">
+              <div style="border:1px solid #ddd;padding:8px 12px;font-size:13px;color:#bbb;margin-bottom:8px;font-family:'Courier New',monospace">YYYYMMDD</div>
+              <div style="border:1px solid #ddd;padding:8px 12px;font-size:13px;color:#bbb;font-family:'Courier New',monospace">YYYYMMDD</div>
+            </div>
+            <div class="ba-note">
+              ❌ Y=Year, M=Month, D=Day — 중학생은 이해 불가<br>
+              ❌ 8자리 숫자인지, 구분자 필요한지 알 수 없음<br>
+              ❌ 영문 기술 약어 → 무번역 원칙 위반
+            </div>
+          </div>
+          <div class="ba-col ba-after">
+            <div class="ba-label"><span class="ba-dot"></span>KRDS 기준 개선안</div>
+            <div style="margin-bottom:12px">
+              <div style="border:1px solid #c5dcc5;background:#f0f6f0;padding:8px 12px;font-size:13px;color:#2d6a2d;margin-bottom:8px;font-weight:500">예) 20260418 (숫자 8자리)</div>
+              <div style="border:1px solid #c5dcc5;background:#f0f6f0;padding:8px 12px;font-size:13px;color:#2d6a2d;font-weight:500">예) 20260418 (숫자 8자리)</div>
+            </div>
+            <div class="ba-note">
+              ✓ 실제 예시로 즉시 형식을 파악 가능<br>
+              ✓ "숫자 8자리" — 구분자 불필요함 명시<br>
+              ✓ 한국어 중심 표기, 즉시 수정 가능
+            </div>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-icon">📅</div>
+          <div class="callout-text">
+            플레이스홀더의 역할: <strong>"이렇게 입력하면 됩니다"를 보여주는 것</strong><br>
+            형식 코드(YYYYMMDD)가 아니라 실제 예시(20260418)가 사용자에게 필요한 정보입니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: 발견 ⑧ — 관람료 혼재 (F9) -->
+    <section class="slide" id="s-f9">
+      <div class="content">
+        <div class="eyebrow">발견 &nbsp;⑧ &nbsp;<em>★★★</em></div>
+        <h2 class="stitle">관람료 안내 — "무료, 특별전 유료" 혼재</h2>
+        <div class="ba-wrap">
+          <div class="ba-col ba-before">
+            <div class="ba-label"><span class="ba-dot"></span>현재 — 서소문본관 관람 안내</div>
+            <div style="background:#fafaf8;border:1px solid #e0e0e0;padding:12px 14px;margin-bottom:10px;font-size:13px;color:#555">
+              관람료 &nbsp;&nbsp; 무료, 특별전 유료
+            </div>
+            <div class="ba-note">
+              ❌ 한 줄에 "무료"와 "유료" 공존 — 내 방문이 무료인지 판단 불가<br>
+              ❌ "특별전" 범위 불명확 — 현재 전시 해당 여부 모름<br>
+              ❌ 비용 계획 필요한 가족·단체에 직접 영향
+            </div>
+          </div>
+          <div class="ba-col ba-after">
+            <div class="ba-label"><span class="ba-dot"></span>KRDS 기준 개선안 (결론 우선)</div>
+            <div style="background:#f0f6f0;border:1px solid #c5dcc5;padding:12px 14px;margin-bottom:6px;font-size:13px">
+              관람료 &nbsp;&nbsp; <strong style="color:#1a3d1a">상설전시 무료</strong><br>
+              <span style="font-size:12px;color:#2d6a2d">기획전시·특별전은 별도 관람료 적용<br>→ 현재 유료 전시 확인하기 [링크]</span>
+            </div>
+            <div class="ba-note">
+              ✓ 결론(상설 무료)을 먼저, 예외를 뒤에<br>
+              ✓ 링크로 추가 확인 경로 제공<br>
+              ✓ 정보핵심화 원칙 적용
+            </div>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-icon">💰</div>
+          <div class="callout-text">
+            관람객의 핵심 질문: <strong>"지금 내가 보려는 전시, 무료인가요?"</strong><br>
+            정보핵심화 원칙: 결론(상설 무료)을 먼저, 예외(기획·특별전)를 뒤에.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: 그 외 발견 ⑨·⑩ — F7 + F10 -->
+    <section class="slide" id="s-f7f10">
+      <div class="content">
+        <div class="eyebrow">그 외 발견 &nbsp;·&nbsp; ⑨ &nbsp;·&nbsp; ⑩</div>
+        <h2 class="stitle">시설 레이블 혼합 표기 · "Back to top"</h2>
+        <div class="grid2" style="gap:16px;margin-bottom:14px">
+          <div>
+            <div class="finding-card">
+              <div class="finding-num">발견 ⑨ — 시설 안내 레이블 (★★☆)</div>
+              <div class="finding-title">영문·한국어 혼합 표기</div>
+              <div class="finding-desc">
+                현재: "Stroller유모차 대여", "Locker물품 보관소"<br>
+                스크린리더가 영문+한국어를 연속으로 읽음 (KWCAG 4.1.2)<br><br>
+                개선: "유모차 대여 (Stroller)" — 한국어 우선, 영문 부기
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="finding-card">
+              <div class="finding-num">발견 ⑩ — 플로팅 버튼 (★☆☆)</div>
+              <div class="finding-title">"Back to top" → "맨 위로"</div>
+              <div class="finding-desc">
+                모든 페이지 우측 하단 플로팅 버튼<br>
+                한국어 서비스(/kr/) 전체에 영문 버튼 레이블 노출<br><br>
+                개선: "맨 위로" 또는 "위로 가기"<br>
+                (영문 버전 /en/에서는 "Back to top" 유지)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-icon">🌐</div>
+          <div class="callout-text">
+            무번역 원칙: <strong>한국어 서비스(/kr/) 내 모든 UI 레이블은 한국어를 우선</strong><br>
+            ⑨는 접근성 직접 영향 · ⑩은 즉시 수정 가능한 언어 일관성 문제.
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- S8: Before/After — 버튼 -->
     <section class="slide" id="s8">
       <div class="content">
@@ -563,7 +716,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
     <section class="slide" id="s13">
       <div class="content">
         <div class="eyebrow">P3 &nbsp;·&nbsp; 종합 정리</div>
-        <h2 class="stitle">5가지 발견 요약</h2>
+        <h2 class="stitle">10가지 발견 요약</h2>
         <table class="tbl">
           <thead>
             <tr>
@@ -603,6 +756,36 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
               <td>내용 없는 제목</td>
               <td>공지 열람률 저하</td>
               <td>가이드 수립 (1개월)</td>
+            </tr>
+            <tr>
+              <td>⑥ FAQ 3중 오류</td>
+              <td>오타·띄어쓰기·ARIA 오류</td>
+              <td>신뢰도·접근성 침해</td>
+              <td>①②즉시 / ③ARIA 수정</td>
+            </tr>
+            <tr>
+              <td>⑦ 날짜 플레이스홀더</td>
+              <td>"YYYYMMDD" 기술 약어</td>
+              <td>필터 사용 포기</td>
+              <td>텍스트 교체 (즉시)</td>
+            </tr>
+            <tr>
+              <td>⑧ 관람료 혼재</td>
+              <td>"무료, 특별전 유료" 공존</td>
+              <td>방문 계획 어려움</td>
+              <td>결론 우선 재작성 (즉시)</td>
+            </tr>
+            <tr>
+              <td>⑨ 시설 레이블</td>
+              <td>영문·한국어 혼합</td>
+              <td>스크린리더 혼란</td>
+              <td>한국어 우선 재정렬 (즉시)</td>
+            </tr>
+            <tr>
+              <td>⑩ Back to top</td>
+              <td>한국어 서비스 내 영문 버튼</td>
+              <td>언어 정책 불일치</td>
+              <td>"맨 위로" 교체 (즉시)</td>
             </tr>
           </tbody>
         </table>
@@ -650,8 +833,8 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           <div>
             <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">핵심 요약</div>
             <ul class="bul">
-              <li>SeMA 사이트에서 5가지 UX라이팅 개선 기회 발견</li>
-              <li>버튼·날짜·에러 메시지는 즉시 텍스트만 수정 가능</li>
+              <li>SeMA 사이트에서 10가지 UX라이팅 개선 기회 발견</li>
+              <li>버튼·날짜·에러·플레이스홀더·관람료 안내 등 즉시 텍스트만 수정 가능</li>
               <li>Phase 1 완료 시 즉시 체감 가능한 변화</li>
               <li>Phase 2는 1~3개월 단위로 체계적 진행</li>
             </ul>
