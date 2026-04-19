@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P0 · Prologue — 글쓰는게미헬기 · SeMA 강연</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo',sans-serif;-webkit-font-smoothing:antialiased}
+.wrapper{position:absolute;transform-origin:top left;width:960px}
+.stage{width:960px;height:540px;position:relative;box-shadow:0 8px 64px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.07)}
+.slide{position:absolute;inset:0;background:#fff;display:none;flex-direction:column;overflow:hidden}
+.slide.active{display:flex}
+/* NAV */
+.nav-bar{width:960px;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 10px}
+.nav-btn{background:none;border:1px solid #1a1a1a;color:#1a1a1a;padding:7px 18px;cursor:pointer;font-family:inherit;font-size:11px;letter-spacing:.08em;transition:all .15s}
+.nav-btn:hover{background:#1a1a1a;color:#fff}
+.nav-btn:disabled{opacity:.25;cursor:default}
+.nav-btn:disabled:hover{background:none;color:#1a1a1a}
+.nav-center{text-align:center}
+.slide-counter{font-size:10px;color:#999;letter-spacing:.12em;display:block;margin-bottom:4px}
+.nav-dots{display:flex;gap:5px;justify-content:center}
+.dot{width:6px;height:6px;border-radius:50%;background:#ccc;cursor:pointer;transition:background .15s}
+.dot.active{background:#1a1a1a}
+/* ── COVER ── */
+.cover{flex-direction:row}
+.cover-bar{width:8px;background:#1a1a1a;flex-shrink:0}
+.cover-body{flex:1;display:flex;flex-direction:column;padding:44px 52px 36px}
+.cover-inst{font-size:10px;font-weight:500;letter-spacing:.18em;color:#888;text-transform:uppercase;margin-bottom:5px}
+.cover-line{width:28px;height:1px;background:#1a1a1a;margin-bottom:40px}
+.cover-cat{font-size:10px;font-weight:500;letter-spacing:.14em;color:#888;text-transform:uppercase;margin-bottom:12px}
+.cover-title{font-family:'Nanum Myeongjo',serif;font-size:52px;font-weight:700;color:#1a1a1a;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.cover-sub{font-size:13px;font-weight:300;color:#555;line-height:1.65;letter-spacing:.01em;margin-bottom:auto;padding-bottom:36px}
+.cover-foot{border-top:1px solid #e8e8e8;padding-top:16px;display:flex;align-items:baseline;gap:16px}
+.cover-date{font-size:11px;color:#888;letter-spacing:.05em}
+.cover-tag{font-size:10px;font-weight:500;color:#fff;background:#1a1a1a;padding:2px 9px;letter-spacing:.08em}
+.cover-part{font-size:11px;color:#bbb;margin-left:auto}
+/* ── CONTENT ── */
+.content{padding:38px 52px 30px;display:flex;flex-direction:column;flex:1}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;color:#888;text-transform:uppercase;margin-bottom:10px}
+.stitle{font-family:'Nanum Myeongjo',serif;font-size:25px;font-weight:700;color:#1a1a1a;line-height:1.3;margin-bottom:20px;border-bottom:1px solid #ebebeb;padding-bottom:14px}
+/* CALLOUT */
+.callout{background:#1a1a1a;padding:16px 20px;display:flex;align-items:flex-start;gap:12px;margin-top:16px}
+.callout-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.callout-text{font-size:12.5px;color:#fff;line-height:1.6;font-weight:300}
+.callout-text strong{font-weight:700;color:#f0c674}
+/* CARD */
+.card{background:#fafaf8;border:1px solid #ebebeb;padding:14px 16px}
+.card-icon{font-size:18px;margin-bottom:7px}
+.card-head{font-size:10px;font-weight:700;letter-spacing:.08em;color:#888;text-transform:uppercase;margin-bottom:5px}
+.card-desc{font-size:12px;color:#444;line-height:1.55}
+/* GRID */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+/* BUL */
+.bul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.bul li{font-size:12.5px;color:#444;line-height:1.55;padding-left:14px;position:relative}
+.bul li::before{content:'—';position:absolute;left:0;color:#bbb}
+.bul li strong{color:#1a1a1a;font-weight:600}
+/* STAT */
+.stat-block{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:#fafaf8;border:1px solid #ebebeb;padding:20px 14px;text-align:center}
+.stat-num{font-family:'Nanum Myeongjo',serif;font-size:32px;font-weight:700;color:#1a1a1a;line-height:1}
+.stat-unit{font-size:10px;font-weight:600;color:#888;letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+.stat-label{font-size:11px;color:#999;margin-top:6px;line-height:1.4}
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:20px;padding:12px 0;border-bottom:1px solid #f2f2f2}
+.tl-item:last-child{border-bottom:none}
+.tl-year{font-size:10px;font-weight:700;letter-spacing:.1em;color:#aaa;text-transform:uppercase;width:80px;flex-shrink:0;padding-top:2px}
+.tl-body{flex:1}
+.tl-role{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:3px}
+.tl-desc{font-size:11.5px;color:#777;line-height:1.5}
+/* QUOTE HERO */
+.quote-hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding:32px 0 0}
+.quote-mark{font-family:'Nanum Myeongjo',serif;font-size:64px;font-weight:700;color:#ebebeb;line-height:1;margin-bottom:-16px;margin-left:-4px}
+.quote-body{font-family:'Nanum Myeongjo',serif;font-size:18px;font-weight:700;color:#1a1a1a;line-height:1.55;margin-bottom:14px;letter-spacing:-.01em}
+.quote-body em{font-style:normal;color:#888}
+.quote-attr{font-size:11px;color:#aaa;letter-spacing:.05em}
+/* HIGHLIGHT TAG */
+.tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;margin-right:5px;vertical-align:middle}
+.tag-black{background:#1a1a1a;color:#fff}
+.tag-gray{background:#f0f0f0;color:#888;border:1px solid #e0e0e0}
+/* INTRO LAYOUT */
+.intro-grid{display:grid;grid-template-columns:180px 1fr;gap:0;flex:1}
+.intro-left{border-right:1px solid #ebebeb;padding-right:24px;display:flex;flex-direction:column;gap:20px}
+.intro-right{padding-left:28px;display:flex;flex-direction:column;gap:16px}
+.intro-name{font-family:'Nanum Myeongjo',serif;font-size:22px;font-weight:700;color:#1a1a1a;line-height:1.25}
+.intro-handle{font-size:10px;font-weight:500;letter-spacing:.12em;color:#888;margin-top:4px;text-transform:uppercase}
+.intro-tagline{font-size:13px;color:#555;line-height:1.6;font-weight:300;font-style:italic}
+.strength-item{display:flex;align-items:flex-start;gap:10px}
+.strength-num{font-family:'Nanum Myeongjo',serif;font-size:20px;font-weight:700;color:#e8e8e8;flex-shrink:0;line-height:1;width:24px}
+.strength-body{}
+.strength-title{font-size:12px;font-weight:700;color:#1a1a1a;margin-bottom:2px}
+.strength-desc{font-size:11px;color:#888;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+  <div class="stage" id="stage">
+
+    <!-- S1: COVER -->
+    <section class="slide cover active" id="s1">
+      <div class="cover-bar"></div>
+      <div class="cover-body">
+        <div class="cover-inst">서울시립미술관 &nbsp;SeMA</div>
+        <div class="cover-line"></div>
+        <div class="cover-cat">P0 · Prologue · 2026</div>
+        <h1 class="cover-title">글쓰는<br>게미헬기</h1>
+        <p class="cover-sub">
+          복잡함을 덜어내고 가치를 선명하게 적습니다.<br>
+          UX 라이터, 커뮤니티 창립자, 강연자
+        </p>
+        <div class="cover-foot">
+          <span class="cover-date">2026.04</span>
+          <span class="cover-tag">자기소개</span>
+          <span class="cover-part">Prologue / 4</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- S2: WHO AM I + STRENGTHS -->
+    <section class="slide" id="s2">
+      <div class="content">
+        <div class="eyebrow">Prologue &nbsp;·&nbsp; About Me</div>
+        <h2 class="stitle">저를 소개합니다</h2>
+        <div class="intro-grid">
+          <div class="intro-left">
+            <div>
+              <div class="intro-name">글쓰는<br>게미헬기</div>
+              <div class="intro-handle">UX WRITER</div>
+              <div style="margin-top:12px">
+                <span class="tag tag-black">커뮤니티 창립</span>
+                <span class="tag tag-gray" style="margin-top:6px;display:inline-block">컨퍼런스 기획</span>
+              </div>
+            </div>
+            <div class="intro-tagline">
+              "복잡함을 덜어내고<br>가치를 선명하게 적습니다."
+            </div>
+          </div>
+          <div class="intro-right">
+            <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#888;text-transform:uppercase;margin-bottom:4px">UX Writer로서의 강점</div>
+            <div class="strength-item">
+              <div class="strength-num">01</div>
+              <div class="strength-body">
+                <div class="strength-title">서비스 맥락을 읽는 눈</div>
+                <div class="strength-desc">도메인과 사용자의 심리적 맥락에 최적화된 언어를 설계합니다. 여행·공공·문화 등 다양한 도메인 경험 보유.</div>
+              </div>
+            </div>
+            <div class="strength-item">
+              <div class="strength-num">02</div>
+              <div class="strength-body">
+                <div class="strength-title">시스템 언어 → 사람의 언어</div>
+                <div class="strength-desc">기술 중심의 냉정한 텍스트를 사용자가 편안하게 이해하는 언어로 전환하는 것이 핵심 역량입니다.</div>
+              </div>
+            </div>
+            <div class="strength-item">
+              <div class="strength-num">03</div>
+              <div class="strength-body">
+                <div class="strength-title">지식 공유와 생태계 구축</div>
+                <div class="strength-desc">국내 UX Writing 커뮤니티를 직접 만들어 업계 표준 논의를 이끌고 후속 세대 라이터를 양성합니다.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S3: CAREER -->
+    <section class="slide" id="s3">
+      <div class="content">
+        <div class="eyebrow">Prologue &nbsp;·&nbsp; Journey</div>
+        <h2 class="stitle">UX 라이터로 살아온 길</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-year">2022 — 2024</div>
+            <div class="tl-body">
+              <div class="tl-role">Yanolja · UX Writer</div>
+              <div class="tl-desc">슈퍼앱 전환 전략에 따른 전 서비스 보이스 톤앤매너 수립 및 마이크로카피 최적화. 여행·숙박·레저 도메인 전반의 텍스트 경험 설계.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">Community</div>
+            <div class="tl-body">
+              <div class="tl-role">Index UXer · 창립자 &amp; 운영 총괄</div>
+              <div class="tl-desc">국내 최대 UX 라이팅 커뮤니티 창설. 현업자 중심의 지식 공유 플랫폼 운영 및 연례 컨퍼런스 기획.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">Publishing</div>
+            <div class="tl-body">
+              <div class="tl-role">책 출판 · Class101 강의</div>
+              <div class="tl-desc">『UX Writing 이론과 실무 가이드』 집필 출판. Class101 '실전 UX 라이팅' 온라인 강의 런칭 — 주니어 라이터 양성.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">Speaking</div>
+            <div class="tl-body">
+              <div class="tl-role">기업·대학 강연 &amp; 멘토링</div>
+              <div class="tl-desc">여러 기업과 대학에서 UX 라이팅 특강 진행. 주니어 라이터를 위한 멘토링 프로그램 참여.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S4: INDEX UXer -->
+    <section class="slide" id="s4">
+      <div class="content">
+        <div class="eyebrow">Prologue &nbsp;·&nbsp; Community</div>
+        <h2 class="stitle">국내 최대 UX 라이팅 커뮤니티 — Index UXer</h2>
+        <div class="grid2" style="gap:20px;align-items:start;flex:1">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:.12em;color:#888;text-transform:uppercase;margin-bottom:10px">왜 만들었나</div>
+              <p style="font-size:12.5px;color:#444;line-height:1.65">국내 UX라이팅 생태계의 불모지에서, 현업 라이터들이 경험을 나누고 직무의 전문성을 함께 키울 수 있는 공간이 필요했습니다.</p>
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:.12em;color:#888;text-transform:uppercase;margin-bottom:10px">무엇을 하는 곳인가</div>
+              <ul class="bul">
+                <li>현업자 중심의 <strong>사례 공유</strong> 및 토론</li>
+                <li>UX Writing <strong>표준·트렌드</strong> 정기 세미나</li>
+                <li>주니어 라이터 <strong>멘토링</strong> 프로그램</li>
+                <li>연례 대규모 <strong>컨퍼런스</strong> 기획·총괄</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="callout">
+              <div class="callout-icon">🏆</div>
+              <div class="callout-text">
+                <strong>국내 최대 UX 라이팅 커뮤니티</strong><br>
+                현업 UX Writer, UX 디자이너, 기획자들이 모여 업계 표준 논의를 이끄는 지식 공유의 장으로 자리매김했습니다.
+              </div>
+            </div>
+            <div class="grid2" style="gap:10px">
+              <div class="stat-block">
+                <div class="stat-num">1,000+</div>
+                <div class="stat-unit">누적 참여자</div>
+                <div class="stat-label">컨퍼런스 누적 참석 인원</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-num">4.8</div>
+                <div class="stat-unit">/ 5.0 만족도</div>
+                <div class="stat-label">컨퍼런스 평균 참가자 만족도</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S5: CONFERENCE -->
+    <section class="slide" id="s5">
+      <div class="content">
+        <div class="eyebrow">Prologue &nbsp;·&nbsp; Conference</div>
+        <h2 class="stitle">&lt;UX 라이터로 살아가기&gt; — 연례 컨퍼런스</h2>
+        <div class="grid2" style="gap:20px;flex:1;align-items:start">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <p style="font-size:13px;color:#444;line-height:1.65">
+              국내 UX 라이팅 불모지에서 시작한 컨퍼런스입니다. 현업 라이터들의 생생한 이야기를 무대 위에 올려, <strong style="color:#1a1a1a">이 직무가 무엇인지</strong> 세상에 알리는 자리입니다.
+            </p>
+            <div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:.12em;color:#888;text-transform:uppercase;margin-bottom:8px">컨퍼런스의 세 가지 역할</div>
+              <ul class="bul">
+                <li><strong>현업 사례 공유</strong> — 실제 현장에서 벌어지는 UX Writing 이야기</li>
+                <li><strong>직무 전문성 공표</strong> — UX Writer라는 직업을 사회에 알리기</li>
+                <li><strong>커뮤니티 연결</strong> — 혼자 일하던 라이터들을 하나로 잇기</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="grid3" style="gap:10px">
+              <div class="stat-block">
+                <div class="stat-num">1,000<span style="font-size:18px">+</span></div>
+                <div class="stat-unit">누적 참여자</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-num">4.8</div>
+                <div class="stat-unit">만족도</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-num">매년</div>
+                <div class="stat-unit">정기 개최</div>
+              </div>
+            </div>
+            <div class="callout">
+              <div class="callout-icon">💬</div>
+              <div class="callout-text">
+                "업계 표준을 만들어가는<br>
+                <strong>지식 공유의 장으로 자리매김했습니다.</strong>"
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S6: 오늘의 자리 -->
+    <section class="slide" id="s6">
+      <div class="content">
+        <div class="eyebrow">Prologue &nbsp;·&nbsp; Today</div>
+        <h2 class="stitle">오늘 이 자리에서 함께할 것들</h2>
+        <div class="quote-hero">
+          <div class="quote-mark">"</div>
+          <div class="quote-body">
+            좋은 UX 라이팅은 눈에 띄는 것이 아니라,<br>
+            사용자가 <em>생각하지 않고</em> 목적지에 도달하게 돕는<br>
+            공기 같은 언어입니다.
+          </div>
+          <div class="quote-attr">— 글쓰는게미헬기, UX Writer Portfolio</div>
+        </div>
+        <div class="callout" style="margin-top:24px">
+          <div class="callout-icon">📍</div>
+          <div class="callout-text">
+            오늘 강연에서는 UX 라이팅의 개념부터 KRDS 기준 적용, SeMA 실제 사이트 분석까지<br>
+            <strong>미술관 직원이 내일 바로 써먹을 수 있는 언어 감각</strong>을 함께 키워봅니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- .stage -->
+
+  <nav class="nav-bar">
+    <button class="nav-btn" id="btn-prev" onclick="go(-1)" disabled>← 이전</button>
+    <div class="nav-center">
+      <span class="slide-counter" id="counter">01 / 06</span>
+      <div class="nav-dots" id="dots"></div>
+    </div>
+    <button class="nav-btn" id="btn-next" onclick="go(1)">다음 →</button>
+  </nav>
+</div>
+
+<script>
+const wrapper=document.getElementById('wrapper');
+const slides=document.querySelectorAll('.slide');
+const counter=document.getElementById('counter');
+const btnPrev=document.getElementById('btn-prev');
+const btnNext=document.getElementById('btn-next');
+const dotsEl=document.getElementById('dots');
+let cur=0;
+slides.forEach((_,i)=>{
+  const d=document.createElement('div');
+  d.className='dot'+(i===0?' active':'');
+  d.onclick=()=>goTo(i);
+  dotsEl.appendChild(d);
+});
+function scale(){
+  const s=Math.min(window.innerWidth/960,window.innerHeight/596);
+  const left=(window.innerWidth-960*s)/2;
+  const top=(window.innerHeight-596*s)/2;
+  wrapper.style.transform='scale('+s+')';
+  wrapper.style.left=left+'px';
+  wrapper.style.top=top+'px';
+}
+window.addEventListener('resize',scale);
+scale();
+function update(){
+  counter.textContent=String(cur+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+  btnPrev.disabled=cur===0;
+  btnNext.disabled=cur===slides.length-1;
+  dotsEl.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+}
+function go(dir){goTo(cur+dir);}
+function goTo(idx){
+  if(idx<0||idx>=slides.length)return;
+  slides[cur].classList.remove('active');
+  cur=idx;
+  slides[cur].classList.add('active');
+  update();
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1);}
+  if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}
+});
+</script>
+</body>
+</html>
