@@ -102,6 +102,11 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
 .tag{font-size:11px;font-weight:500;border:1px solid;padding:4px 11px}
 .tag-good{background:#f0f8f0;border-color:#b8d8b8;color:#2d6a2d}
 .tag-neu{background:#f5f5f5;border-color:#e0e0e0;color:#555}
+/* S12 overflow fix — IND-79 */
+#s10 > .content { padding-top: 24px; }
+#s10 .stitle { margin-bottom: 12px; padding-bottom: 8px; }
+#s10 .check-item { padding: 7px 14px; }
+#s10 .callout { margin-top: 8px; padding: 10px 16px; }
 </style>
 </head>
 <body>
@@ -479,49 +484,49 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
             <div class="check-box">□</div>
             <div class="check-text">
               <strong>수신자 행동 확인</strong> — 이 글을 읽고 상대방이 바로 행동할 수 있는가?
-              <div style="font-size:11px;color:#aaa;margin-top:3px">행동이 불분명하면 날짜·장소·방법 중 빠진 것을 추가하세요</div>
+              <div style="font-size:11px;color:#aaa">행동이 불분명하면 날짜·장소·방법 중 빠진 것을 추가하세요</div>
             </div>
           </div>
           <div class="check-item">
             <div class="check-box">□</div>
             <div class="check-text">
               <strong>날짜·시간 형식</strong> — "4/15 18:00" 대신 "4월 15일(화) 오후 6시"로 썼는가?
-              <div style="font-size:11px;color:#aaa;margin-top:3px">숫자 단독 표기는 오해 유발 — 한글로 풀어 쓰기</div>
+              <div style="font-size:11px;color:#aaa">숫자 단독 표기는 오해 유발 — 한글로 풀어 쓰기</div>
             </div>
           </div>
           <div class="check-item">
             <div class="check-box">□</div>
             <div class="check-text">
               <strong>버튼·링크 텍스트</strong> — 동사로 시작하고, 클릭 후 무슨 일이 일어나는지 알 수 있는가?
-              <div style="font-size:11px;color:#aaa;margin-top:3px">"확인" → "예약 완료하기" &nbsp;/&nbsp; "더보기" → "전시 전체 보기"</div>
+              <div style="font-size:11px;color:#aaa">"확인" → "예약 완료하기" &nbsp;/&nbsp; "더보기" → "전시 전체 보기"</div>
             </div>
           </div>
           <div class="check-item">
             <div class="check-box">□</div>
             <div class="check-text">
               <strong>에러·안내 메시지</strong> — [무슨 일] + [내 잘못 아님] + [다음 행동]이 모두 있는가?
-              <div style="font-size:11px;color:#aaa;margin-top:3px">연락처까지 포함하면 문의 전화가 줄어듭니다</div>
+              <div style="font-size:11px;color:#aaa">연락처까지 포함하면 문의 전화가 줄어듭니다</div>
             </div>
           </div>
           <div class="check-item">
             <div class="check-box">□</div>
             <div class="check-text">
               <strong>도입부 제거</strong> — "안내드립니다", "아래와 같이 공지하오니" 같은 빈 문장을 삭제했는가?
-              <div style="font-size:11px;color:#aaa;margin-top:3px">첫 문장에서 바로 핵심 내용으로 시작하세요</div>
+              <div style="font-size:11px;color:#aaa">첫 문장에서 바로 핵심 내용으로 시작하세요</div>
             </div>
           </div>
           <div class="check-item">
             <div class="check-box">□</div>
             <div class="check-text">
               <strong>플레이스홀더 vs 레이블</strong> — 입력창에 레이블이 따로 있는가? (플레이스홀더만 쓰지 않았는가?)
-              <div style="font-size:11px;color:#aaa;margin-top:3px">입력 시작 시 힌트가 사라지면 사용자가 맥락을 잃습니다</div>
+              <div style="font-size:11px;color:#aaa">입력 시작 시 힌트가 사라지면 사용자가 맥락을 잃습니다</div>
             </div>
           </div>
           <div class="check-item">
             <div class="check-box">□</div>
             <div class="check-text">
               <strong>알림·팝업 텍스트</strong> — 모달 헤더에 목적이 명시되었는가? 토스트는 1줄인가?
-              <div style="font-size:11px;color:#aaa;margin-top:3px">"알림" 헤더 + "확인" 버튼 조합은 금지 — "예약을 취소하시겠어요?" + "예약 취소 / 돌아가기"</div>
+              <div style="font-size:11px;color:#aaa">"알림" 헤더 + "확인" 버튼 조합은 금지 — "예약을 취소하시겠어요?" + "예약 취소 / 돌아가기"</div>
             </div>
           </div>
         </div>
