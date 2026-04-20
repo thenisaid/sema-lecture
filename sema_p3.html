@@ -121,7 +121,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
         <h1 class="cover-title">현장에서<br>발견한<br>것들</h1>
         <p class="cover-sub">
           SeMA 사이트 실제 사례 분석<br>
-          KRDS 기준으로 진단한 개선 기회 10가지
+          KRDS 기준으로 진단한 개선 기회 8가지
         </p>
         <div class="cover-foot">
           <span class="cover-date">2026.04</span>
@@ -145,12 +145,12 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           <div class="card">
             <div class="card-icon">📐</div>
             <div class="card-head">평가 기준</div>
-            <div class="card-desc">KRDS UX라이팅 가이드라인 (3대 원칙: 무번역·정보핵심화·심리적안전망)</div>
+            <div class="card-desc">KRDS UX라이팅 가이드라인 + P1 3원칙 (명확, 구체, 인간적)</div>
           </div>
           <div class="card">
             <div class="card-icon">📋</div>
             <div class="card-head">발견 결과</div>
-            <div class="card-desc">10가지 개선 기회 — 즉시 가능 7개 + 중기 과제 3개</div>
+            <div class="card-desc">8가지 개선 기회 — 즉시 가능 5개 + 중기 과제 3개</div>
           </div>
         </div>
         <div class="callout">
@@ -270,7 +270,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
         <div class="callout">
           <div class="callout-icon">🛟</div>
           <div class="callout-text">
-            에러 메시지 3단 구조: <strong>① 무슨 일인지</strong> + <strong>② 왜 그런지 (시스템 원인 우선, 사용자 탓 금지)</strong> + <strong>③ 다음 행동</strong><br>
+            에러 메시지 공식: <strong>① 무슨 일인지</strong> + <strong>② 사용자 잘못이 아님을 암시</strong> + <strong>③ 다음 행동</strong><br>
             "잠시 후" "다시 시도" "문의해주세요" — 이 세 가지만 있으면 됩니다.
           </div>
         </div>
@@ -365,160 +365,152 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
       </div>
     </section>
 
-    <!-- NEW: 발견 ⑥ — FAQ 3중 오류 (F8) -->
-    <section class="slide" id="s-f8">
+    <!-- S8: 발견 ⑥ 플레이스홀더 오남용 -->
+    <section class="slide" id="s8a">
       <div class="content">
-        <div class="eyebrow">발견 &nbsp;⑥ &nbsp;<em>★★★</em></div>
-        <h2 class="stitle">FAQ 페이지 — 3중 오류</h2>
-        <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:14px">
-          <div class="finding-card">
-            <div class="finding-num">① 오타</div>
-            <div class="finding-title">"훨체어" → "휠체어"</div>
-            <div class="finding-desc">FAQ 질문 제목에 오타. 같은 분관 다른 질문에서는 "휠체어"로 올바르게 표기 — 일관성도 없음.</div>
+        <div class="eyebrow">발견 &nbsp;⑥</div>
+        <h2 class="stitle">플레이스홀더가 레이블을 대체 — 접근성 위반</h2>
+        <div class="grid2" style="gap:20px;margin-bottom:16px">
+          <div>
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">발견된 문제</div>
+            <ul class="bul">
+              <li>검색창에 레이블 없이 플레이스홀더만 존재 ("전시명 또는 작가 검색")</li>
+              <li>입력 시작 시 힌트 텍스트가 사라져 맥락을 잃음</li>
+              <li>스크린리더가 입력 필드 목적을 안내하지 못함 (WCAG 1.3.1 위반)</li>
+            </ul>
           </div>
-          <div class="finding-card">
-            <div class="finding-num">② 띄어쓰기</div>
-            <div class="finding-title">페이지 타이틀 "자주묻는질문" → "자주 묻는 질문"</div>
-            <div class="finding-desc">한국어 맞춤법상 각 단어는 띄어 씀. &lt;title&gt; 태그에도 반영되어 SEO 및 스크린리더에 영향.</div>
-          </div>
-          <div class="finding-card">
-            <div class="finding-num">③ 접근성 (KWCAG 4.1.2)</div>
-            <div class="finding-title">아코디언 상태 "축소됨" 텍스트 콘텐츠에 혼입</div>
-            <div class="finding-desc">스크린리더 출력: "유모차와 휠체어를 대여할 수 있나요? 서울시립 미술아카이브 축소됨" — ARIA 역할 분리 없이 상태값 노출.</div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">KRDS 기준 개선안</div>
+            <ul class="bul">
+              <li>시각적 레이블 추가: "전시·작가 검색" (항상 보임)</li>
+              <li>플레이스홀더는 보조 힌트로만: "예: 이중섭, 미래의 미술"</li>
+              <li>aria-label 또는 &lt;label&gt; 태그로 접근성 확보</li>
+            </ul>
           </div>
         </div>
         <div class="callout">
-          <div class="callout-icon">⚡</div>
+          <div class="callout-icon">🏷️</div>
           <div class="callout-text">
-            ①②는 텍스트 수정으로 즉시 해결. <strong>③은 WA 접근성 인증 기관으로서 직접 모순</strong><br>
-            <code style="background:#333;padding:1px 5px;font-size:11px;border-radius:2px">&lt;span class="sr-only"&gt;축소됨&lt;/span&gt;</code> — ARIA 분리로 해결 가능.
+            <strong>즉시 가능한 개선:</strong> HTML에 &lt;label&gt; 태그 추가 + 플레이스홀더를 힌트로 전환<br>
+            레이블은 절대 사라지지 않아야 합니다 — 플레이스홀더는 레이블이 아닙니다.<br>
+            ⚠ KRDS 공백: 플레이스홀더 텍스트 형식(예: "예:" 접두어 여부) 기준 미정 — SeMA 자체 기준 수립 권장
           </div>
         </div>
       </div>
     </section>
 
-    <!-- NEW: 발견 ⑦ — 날짜 플레이스홀더 (F6) -->
-    <section class="slide" id="s-f6">
+    <!-- S9: 발견 ⑦ 빈 화면·로딩 문구 부재 -->
+    <section class="slide" id="s9a">
       <div class="content">
-        <div class="eyebrow">발견 &nbsp;⑦ &nbsp;<em>★★★</em></div>
-        <h2 class="stitle">날짜 입력 플레이스홀더 "YYYYMMDD"</h2>
+        <div class="eyebrow">발견 &nbsp;⑦</div>
+        <h2 class="stitle">빈 화면·로딩 상태 문구 부재</h2>
         <div class="ba-wrap">
           <div class="ba-col ba-before">
-            <div class="ba-label"><span class="ba-dot"></span>현재 — 전시·프로그램 날짜 필터 입력</div>
-            <div style="margin-bottom:12px">
-              <div style="border:1px solid #ddd;padding:8px 12px;font-size:13px;color:#bbb;margin-bottom:8px;font-family:'Courier New',monospace">YYYYMMDD</div>
-              <div style="border:1px solid #ddd;padding:8px 12px;font-size:13px;color:#bbb;font-family:'Courier New',monospace">YYYYMMDD</div>
-            </div>
-            <div class="ba-note">
-              ❌ Y=Year, M=Month, D=Day — 중학생은 이해 불가<br>
-              ❌ 8자리 숫자인지, 구분자 필요한지 알 수 없음<br>
-              ❌ 영문 기술 약어 → 무번역 원칙 위반
-            </div>
+            <div class="ba-label"><span class="ba-dot"></span>현재 상태 (발견)</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+              <li style="font-size:12.5px;color:#555;padding:4px 0;border-bottom:1px solid #eee">예약 내역 없음 → "데이터가 없습니다."</li>
+              <li style="font-size:12.5px;color:#555;padding:4px 0;border-bottom:1px solid #eee">검색 결과 없음 → 빈 화면 (문구 없음)</li>
+              <li style="font-size:12.5px;color:#555;padding:4px 0">로딩 중 → 스피너만 (텍스트 안내 없음)</li>
+            </ul>
+            <div class="ba-note">❌ 사용자가 막막함을 느낌<br>❌ 다음 행동을 알 수 없음<br>❌ 오류인지 정상인지 불분명</div>
           </div>
           <div class="ba-col ba-after">
             <div class="ba-label"><span class="ba-dot"></span>KRDS 기준 개선안</div>
-            <div style="margin-bottom:12px">
-              <div style="border:1px solid #c5dcc5;background:#f0f6f0;padding:8px 12px;font-size:13px;color:#2d6a2d;margin-bottom:8px;font-weight:500">예) 20260418 (숫자 8자리)</div>
-              <div style="border:1px solid #c5dcc5;background:#f0f6f0;padding:8px 12px;font-size:13px;color:#2d6a2d;font-weight:500">예) 20260418 (숫자 8자리)</div>
-            </div>
-            <div class="ba-note">
-              ✓ 실제 예시로 즉시 형식을 파악 가능<br>
-              ✓ "숫자 8자리" — 구분자 불필요함 명시<br>
-              ✓ 한국어 중심 표기, 즉시 수정 가능
-            </div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+              <li style="font-size:12.5px;color:#1a3d1a;font-weight:500;padding:4px 0;border-bottom:1px solid #c5dcc5">"예약 내역이 아직 없어요. 전시를 둘러보고 첫 예약을 해보세요."</li>
+              <li style="font-size:12.5px;color:#1a3d1a;font-weight:500;padding:4px 0;border-bottom:1px solid #c5dcc5">"검색 결과가 없어요. 다른 키워드로 검색하거나 전체 전시 목록을 확인해보세요."</li>
+              <li style="font-size:12.5px;color:#1a3d1a;font-weight:500;padding:4px 0">"예약 정보를 불러오고 있어요. 잠시만 기다려주세요."</li>
+            </ul>
+            <div class="ba-note">✓ 현재 상태 설명<br>✓ 다음 행동 안내<br>✓ 기다림의 이유 제공</div>
           </div>
         </div>
         <div class="callout">
-          <div class="callout-icon">📅</div>
+          <div class="callout-icon">📭</div>
           <div class="callout-text">
-            플레이스홀더의 역할: <strong>"이렇게 입력하면 됩니다"를 보여주는 것</strong><br>
-            형식 코드(YYYYMMDD)가 아니라 실제 예시(20260418)가 사용자에게 필요한 정보입니다.
+            빈 화면은 <strong>기회</strong>입니다. 막막함 대신 다음 탐색으로 자연스럽게 연결하세요.<br>
+            KRDS 공식: <strong>"[현재 상태 설명]. [다음 행동 안내]."</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- NEW: 발견 ⑧ — 관람료 혼재 (F9) -->
-    <section class="slide" id="s-f9">
+    <!-- S10: 발견 ⑧ 링크 텍스트 접근성 -->
+    <section class="slide" id="s10a">
       <div class="content">
-        <div class="eyebrow">발견 &nbsp;⑧ &nbsp;<em>★★★</em></div>
-        <h2 class="stitle">관람료 안내 — "무료, 특별전 유료" 혼재</h2>
+        <div class="eyebrow">발견 &nbsp;⑧</div>
+        <h2 class="stitle">링크 텍스트 — 접근성 위반 및 모호한 표현</h2>
         <div class="ba-wrap">
           <div class="ba-col ba-before">
-            <div class="ba-label"><span class="ba-dot"></span>현재 — 서소문본관 관람 안내</div>
-            <div style="background:#fafaf8;border:1px solid #e0e0e0;padding:12px 14px;margin-bottom:10px;font-size:13px;color:#555">
-              관람료 &nbsp;&nbsp; 무료, 특별전 유료
+            <div class="ba-label"><span class="ba-dot"></span>현재 링크 텍스트 패턴</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">
+              <span style="font-size:12px;border:1px solid #ddd;padding:5px 14px;color:#555;text-decoration:underline">여기를 클릭하세요</span>
+              <span style="font-size:12px;border:1px solid #ddd;padding:5px 14px;color:#555;text-decoration:underline">자세히 보기</span>
+              <span style="font-size:12px;border:1px solid #ddd;padding:5px 14px;color:#555;text-decoration:underline">더보기</span>
+              <span style="font-size:12px;border:1px solid #ddd;padding:5px 14px;color:#555;text-decoration:underline">바로가기</span>
             </div>
             <div class="ba-note">
-              ❌ 한 줄에 "무료"와 "유료" 공존 — 내 방문이 무료인지 판단 불가<br>
-              ❌ "특별전" 범위 불명확 — 현재 전시 해당 여부 모름<br>
-              ❌ 비용 계획 필요한 가족·단체에 직접 영향
+              ❌ 스크린리더 목록에서 "여기를" "자세히" "더보기"만 나열<br>
+              ❌ 링크만 읽으면 목적지 불명 (WCAG 2.4.4 위반)
             </div>
           </div>
           <div class="ba-col ba-after">
-            <div class="ba-label"><span class="ba-dot"></span>KRDS 기준 개선안 (결론 우선)</div>
-            <div style="background:#f0f6f0;border:1px solid #c5dcc5;padding:12px 14px;margin-bottom:6px;font-size:13px">
-              관람료 &nbsp;&nbsp; <strong style="color:#1a3d1a">상설전시 무료</strong><br>
-              <span style="font-size:12px;color:#2d6a2d">기획전시·특별전은 별도 관람료 적용<br>→ 현재 유료 전시 확인하기 [링크]</span>
+            <div class="ba-label"><span class="ba-dot"></span>KRDS 기준 제안</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">
+              <span style="font-size:12px;border:1px solid #c5dcc5;background:#f0f6f0;padding:5px 14px;color:#1a3d1a;font-weight:500;text-decoration:underline">4월 전시 목록 전체 보기</span>
+              <span style="font-size:12px;border:1px solid #c5dcc5;background:#f0f6f0;padding:5px 14px;color:#1a3d1a;font-weight:500;text-decoration:underline">관람 안내 자세히 보기</span>
+              <span style="font-size:12px;border:1px solid #c5dcc5;background:#f0f6f0;padding:5px 14px;color:#1a3d1a;font-weight:500;text-decoration:underline">교육 프로그램 신청하기</span>
             </div>
             <div class="ba-note">
-              ✓ 결론(상설 무료)을 먼저, 예외를 뒤에<br>
-              ✓ 링크로 추가 확인 경로 제공<br>
-              ✓ 정보핵심화 원칙 적용
+              ✓ 링크만 읽어도 목적지 파악 가능<br>
+              ✓ WCAG 2.4.4 준수 + 클릭률 향상
             </div>
           </div>
         </div>
         <div class="callout">
-          <div class="callout-icon">💰</div>
+          <div class="callout-icon">🔗</div>
           <div class="callout-text">
-            관람객의 핵심 질문: <strong>"지금 내가 보려는 전시, 무료인가요?"</strong><br>
-            정보핵심화 원칙: 결론(상설 무료)을 먼저, 예외(기획·특별전)를 뒤에.
+            <strong>즉시 가능한 개선:</strong> "여기를 클릭" "자세히 보기"를 전체 검색 후 목적지 텍스트로 교체<br>
+            스크린리더 사용자는 링크만 추출해 듣습니다 — 모든 링크가 독립적으로 의미를 가져야 합니다.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- NEW: 그 외 발견 ⑨·⑩ — F7 + F10 -->
-    <section class="slide" id="s-f7f10">
+    <!-- s_contradiction: KRDS도 완벽하지 않다 — 자기 모순 사례 -->
+    <section class="slide" id="s_contradiction">
       <div class="content">
-        <div class="eyebrow">그 외 발견 &nbsp;·&nbsp; ⑨ &nbsp;·&nbsp; ⑩</div>
-        <h2 class="stitle">시설 레이블 혼합 표기 · "Back to top"</h2>
-        <div class="grid2" style="gap:16px;margin-bottom:14px">
+        <div class="eyebrow">발견 &nbsp;⑨ &nbsp;·&nbsp; 메타 관찰</div>
+        <h2 class="stitle">KRDS도 완벽하지 않다 — 자기 모순 사례</h2>
+        <div class="grid2" style="gap:16px;margin-bottom:16px">
           <div>
-            <div class="finding-card">
-              <div class="finding-num">발견 ⑨ — 시설 안내 레이블 (★★☆)</div>
-              <div class="finding-title">영문·한국어 혼합 표기</div>
-              <div class="finding-desc">
-                현재: "Stroller유모차 대여", "Locker물품 보관소"<br>
-                스크린리더가 영문+한국어를 연속으로 읽음 (KWCAG 4.1.2)<br>
-                개선: "유모차 대여 (Stroller)" — 한국어 우선, 영문 부기
-              </div>
-            </div>
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">KRDS 원칙 vs KRDS 실제</div>
+            <ul class="bul">
+              <li>버튼 기준: "동사+목적어 권장" → 버튼 컴포넌트 데모에 "확인" "취소" 단독 사용</li>
+              <li>링크 기준: "목적지 텍스트" → 사이트 내 "자세히 보기" 링크 다수</li>
+              <li>한글-영어 병기 기준 미정 → 문서 곳곳 혼재 (Input vs 입력, Label vs 레이블)</li>
+              <li>도움말·툴팁 글자 수 기준 없음 → 실제 구현마다 분량 상이</li>
+            </ul>
           </div>
           <div>
-            <div class="finding-card">
-              <div class="finding-num">발견 ⑩ — 플로팅 버튼 (★☆☆)</div>
-              <div class="finding-title">"Back to top" → "맨 위로"</div>
-              <div class="finding-desc">
-                모든 페이지 우측 하단 플로팅 버튼<br>
-                한국어 서비스(/kr/) 전체에 영문 버튼 레이블 노출<br>
-                개선: "맨 위로" 또는 "위로 가기"<br>
-                (영문 버전 /en/에서는 "Back to top" 유지)
-              </div>
-            </div>
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">이것이 의미하는 바</div>
+            <ul class="bul">
+              <li>기준서는 출발점이지 완성형이 아님</li>
+              <li>기관 맥락에 맞게 운영 가이드를 별도 수립해야 함</li>
+              <li>SeMA처럼 원칙을 직접 적용·개선하는 과정이 가이드 성숙에 기여</li>
+            </ul>
           </div>
         </div>
         <div class="callout">
-          <div class="callout-icon">🌐</div>
+          <div class="callout-icon">🔍</div>
           <div class="callout-text">
-            무번역 원칙: <strong>한국어 서비스(/kr/) 내 모든 UI 레이블은 한국어를 우선</strong><br>
-            ⑨는 접근성 직접 영향 · ⑩은 즉시 수정 가능한 언어 일관성 문제.
+            오늘 강연는 KRDS를 비판하는 자리가 아닙니다.<br>
+            <strong>"기준을 기반으로 실무를 만드는 것"</strong>이 UX라이팅 담당자의 역할입니다.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- S8: Before/After — 버튼 -->
+    <!-- S11: Before/After — 버튼 -->
     <section class="slide" id="s8">
       <div class="content">
         <div class="eyebrow">Before / After &nbsp;①</div>
@@ -582,7 +574,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
             <div class="ba-text">"예약 중 문제가 생겼어요.<br>잠시 후 다시 시도하거나,<br>전화(02-2124-8800)로 문의해주세요."</div>
             <div class="ba-note">
               ✓ 상황을 이해할 수 있음<br>
-              ✓ 왜 그런지 명시 (시스템 원인, 사용자 탓 없음)<br>
+              ✓ 사용자 잘못이 아님을 암시<br>
               ✓ 다음 행동 2가지 제시<br>
               ✓ 연락처 포함
             </div>
@@ -637,7 +629,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
     <section class="slide" id="s11">
       <div class="content">
         <div class="eyebrow">개선 로드맵 &nbsp;·&nbsp; Phase 1</div>
-        <h2 class="stitle">즉시 실행 가능한 3가지 (이번 주)</h2>
+        <h2 class="stitle">즉시 실행 가능한 5가지 (이번 주)</h2>
         <div class="action-list" style="flex:1">
           <div class="action-item">
             <span class="action-badge sev-high">즉시</span>
@@ -649,7 +641,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           <div class="action-item">
             <span class="action-badge sev-high">즉시</span>
             <div>
-              <div class="action-desc"><strong>날짜 표기 통일</strong> — 사이트 전체에서 "18:00" → "오후 6시", "4/15" → "4월 15일(화)"</div>
+              <div class="action-desc"><strong>날짜 표기 통일</strong> — "18:00" → "오후 6시", "4/15" → "4월 15일(화)" 전체 교체</div>
               <div class="action-eff">예상 효과: 관람객 혼란 감소, 일정 앱 복사 용이</div>
             </div>
           </div>
@@ -658,6 +650,20 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
             <div>
               <div class="action-desc"><strong>에러 메시지 개선</strong> — "오류가 발생했습니다" → 상황 설명 + 전화번호 포함</div>
               <div class="action-eff">예상 효과: 고객 문의 전화 감소, 사용자 이탈 방지</div>
+            </div>
+          </div>
+          <div class="action-item">
+            <span class="action-badge sev-high">즉시</span>
+            <div>
+              <div class="action-desc"><strong>링크 텍스트 교체</strong> — "여기를 클릭" "자세히 보기" → 목적지 명시 텍스트</div>
+              <div class="action-eff">예상 효과: 접근성 향상(WCAG 2.4.4), 스크린리더 이용자 경험 개선</div>
+            </div>
+          </div>
+          <div class="action-item">
+            <span class="action-badge sev-high">즉시</span>
+            <div>
+              <div class="action-desc"><strong>빈 화면 문구 추가</strong> — "데이터가 없습니다" → 상태 설명 + 다음 행동 안내</div>
+              <div class="action-eff">예상 효과: 이탈률 감소, 전시 탐색 유도</div>
             </div>
           </div>
         </div>
@@ -716,7 +722,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
     <section class="slide" id="s13">
       <div class="content">
         <div class="eyebrow">P3 &nbsp;·&nbsp; 종합 정리</div>
-        <h2 class="stitle">10가지 발견 요약</h2>
+        <h2 class="stitle">8가지 발견 요약</h2>
         <table class="tbl">
           <thead>
             <tr>
@@ -758,34 +764,22 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
               <td>가이드 수립 (1개월)</td>
             </tr>
             <tr>
-              <td>⑥ FAQ 3중 오류</td>
-              <td>오타·띄어쓰기·ARIA 오류</td>
-              <td>신뢰도·접근성 침해</td>
-              <td>①②즉시 / ③ARIA 수정</td>
+              <td>⑥ 플레이스홀더</td>
+              <td>레이블 없이 플레이스홀더만</td>
+              <td>접근성 위반(WCAG)</td>
+              <td>레이블 추가 (즉시)</td>
             </tr>
             <tr>
-              <td>⑦ 날짜 플레이스홀더</td>
-              <td>"YYYYMMDD" 기술 약어</td>
-              <td>필터 사용 포기</td>
+              <td>⑦ 빈 화면</td>
+              <td>"데이터 없음" — 다음 행동 없음</td>
+              <td>이탈률 증가</td>
+              <td>문구 추가 (즉시)</td>
+            </tr>
+            <tr>
+              <td>⑧ 링크 텍스트</td>
+              <td>"여기 클릭" "자세히 보기"</td>
+              <td>접근성 위반(WCAG)</td>
               <td>텍스트 교체 (즉시)</td>
-            </tr>
-            <tr>
-              <td>⑧ 관람료 혼재</td>
-              <td>"무료, 특별전 유료" 공존</td>
-              <td>방문 계획 어려움</td>
-              <td>결론 우선 재작성 (즉시)</td>
-            </tr>
-            <tr>
-              <td>⑨ 시설 레이블</td>
-              <td>영문·한국어 혼합</td>
-              <td>스크린리더 혼란</td>
-              <td>한국어 우선 재정렬 (즉시)</td>
-            </tr>
-            <tr>
-              <td>⑩ Back to top</td>
-              <td>한국어 서비스 내 영문 버튼</td>
-              <td>언어 정책 불일치</td>
-              <td>"맨 위로" 교체 (즉시)</td>
             </tr>
           </tbody>
         </table>
@@ -833,8 +827,8 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           <div>
             <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">핵심 요약</div>
             <ul class="bul">
-              <li>SeMA 사이트에서 10가지 UX라이팅 개선 기회 발견</li>
-              <li>버튼·날짜·에러·플레이스홀더·관람료 안내 등 즉시 텍스트만 수정 가능</li>
+              <li>SeMA 사이트에서 5가지 UX라이팅 개선 기회 발견</li>
+              <li>버튼·날짜·에러 메시지는 즉시 텍스트만 수정 가능</li>
               <li>Phase 1 완료 시 즉시 체감 가능한 변화</li>
               <li>Phase 2는 1~3개월 단위로 체계적 진행</li>
             </ul>
@@ -864,7 +858,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
   <nav class="nav-bar">
     <button class="nav-btn" id="btn-prev" onclick="go(-1)" disabled>← 이전</button>
     <div class="nav-center">
-      <span class="slide-counter" id="counter">01 / 15</span>
+      <span class="slide-counter" id="counter">01 / 18</span>
       <div class="nav-dots" id="dots"></div>
     </div>
     <button class="nav-btn" id="btn-next" onclick="go(1)">다음 →</button>

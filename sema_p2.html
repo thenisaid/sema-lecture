@@ -300,12 +300,20 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
               <div class="rule-ex"><span class="x">✗ 확인 / 취소</span> &nbsp;→&nbsp; <span class="o">✓ 예약 완료 / 돌아가기</span></div>
             </div>
           </div>
+          <div class="rule-item">
+            <div class="rule-badge">예외</div>
+            <div class="rule-body">
+              <div class="rule-title">완료·닫기·취소·추가·삭제 — 단독 명사형 허용</div>
+              <div class="rule-ex">이 5개는 맥락이 명확해 단독으로 써도 행동이 이해됨 <span class="o">✓ 완료 / 닫기 / 취소 / 추가 / 삭제</span></div>
+            </div>
+          </div>
         </div>
         <div class="callout">
           <div class="callout-icon">🔘</div>
           <div class="callout-text">
             KRDS 기준: 버튼은 클릭 결과를 예측할 수 있어야 합니다.<br>
-            <strong>"확인"</strong>은 무엇을 확인하는지 모릅니다. <strong>"예약 완료"</strong>는 클릭하면 예약이 완료된다는 것을 압니다.
+            <strong>"확인"</strong>은 무엇을 확인하는지 모릅니다. <strong>"예약 완료"</strong>는 클릭하면 예약이 완료된다는 것을 압니다.<br>
+            <small style="color:#aaa;font-size:11px">단, 완료·닫기·취소·추가·삭제처럼 맥락이 자명한 경우엔 명사형 단독 사용을 허용합니다.</small>
           </div>
         </div>
       </div>
@@ -339,7 +347,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
         <div class="callout">
           <div class="callout-icon">🛟</div>
           <div class="callout-text">
-            KRDS 에러 메시지 3단 구조: <strong>① 무슨 일이 생겼는지</strong> + <strong>② 왜 그런지 (시스템 원인 우선, 사용자 탓 금지)</strong> + <strong>③ 다음에 무엇을 하면 되는지</strong><br>
+            KRDS 에러 메시지 3요소: <strong>① 무슨 일이 생겼는지</strong> + <strong>② 사용자 잘못이 아님</strong> + <strong>③ 다음에 무엇을 하면 되는지</strong><br>
             "죄송합니다. 일시적인 오류입니다. 잠시 후 다시 시도해주세요." → 3요소 충족 예시
           </div>
         </div>
@@ -374,6 +382,44 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           <div class="callout-text">
             빈 화면은 <strong>기회</strong>입니다. 사용자가 막막해하지 않도록 다음 행동을 안내하세요.<br>
             KRDS 공식: <strong>"[상태 설명]. [다음 행동 안내]."</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- s_modal: 규칙 5 — 모달·토스트·스냅바 Writing -->
+    <section class="slide" id="s_modal">
+      <div class="content">
+        <div class="eyebrow">03 &nbsp;·&nbsp; 규칙 5</div>
+        <h2 class="stitle">모달·토스트·스냅바 Writing</h2>
+        <div class="rule-list" style="flex:none;margin-bottom:14px">
+          <div class="rule-item">
+            <div class="rule-badge">모달</div>
+            <div class="rule-body">
+              <div class="rule-title">헤더 = 목적 명시 / 버튼 = 행동 반영 / 모달은 최후의 수단</div>
+              <div class="rule-ex"><span class="x">✗ 헤더:"알림" / 버튼:"확인"</span> &nbsp;→&nbsp; <span class="o">✓ 헤더:"예약을 취소하시겠어요?" / 버튼:"예약 취소"+"돌아가기"</span></div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-badge">토스트</div>
+            <div class="rule-body">
+              <div class="rule-title">1줄, 종결 어미 통일 ("~되었어요" 또는 "~했어요")</div>
+              <div class="rule-ex"><span class="x">✗ "예약이 완료되었습니다."</span> &nbsp;→&nbsp; <span class="o">✓ "예약이 완료되었어요."</span></div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-badge">스냅바</div>
+            <div class="rule-body">
+              <div class="rule-title">1문장 + 버튼 최대 1개 (행동 유도 또는 실행 취소)</div>
+              <div class="rule-ex"><span class="x">✗ "삭제되었습니다. 취소 / 확인"</span> &nbsp;→&nbsp; <span class="o">✓ "삭제되었어요." [실행 취소]</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-icon">💬</div>
+          <div class="callout-text">
+            KRDS 공백: 토스트·스냅바 종결 어미 기준이 아직 공식 미정입니다.<br>
+            SeMA 제안 — <strong>"~되었어요 / ~했어요"</strong>로 통일 (친근하되 격식 유지, 비격식체 허용 범위 내).
           </div>
         </div>
       </div>
@@ -459,19 +505,111 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
               <td>자세히 보기</td>
               <td>관람 안내 자세히 보기</td>
             </tr>
+            <tr>
+              <td>외부 링크</td>
+              <td>국립현대미술관 바로가기</td>
+              <td>국립현대미술관 바로가기 (외부)</td>
+            </tr>
           </tbody>
         </table>
         <div class="callout">
           <div class="callout-icon">🔗</div>
           <div class="callout-text">
-            링크 텍스트 규칙: <strong>"여기를 클릭하세요" 금지</strong>. 링크 텍스트만 읽어도 목적지를 알아야 합니다.<br>
+            링크 텍스트 2대 원칙: <strong>① "여기를 클릭하세요" 금지</strong> — 링크 텍스트만 읽어도 목적지를 알아야 합니다.<br>
+            <strong>② 외부 링크엔 "(외부)" 표기</strong> — 새 탭으로 열린다는 사실을 미리 알려야 합니다. (WCAG 2.4.4)<br>
             스크린리더 사용자는 링크만 추출해서 읽습니다 — "여기"만 나열되면 의미를 알 수 없습니다.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- S11: SeMA 가이드 한 장 -->
+    <!-- S11: WCAG 접근성 연계 -->
+    <section class="slide" id="s11a">
+      <div class="content">
+        <div class="eyebrow">WCAG &nbsp;·&nbsp; 접근성과 UX라이팅</div>
+        <h2 class="stitle">접근성은 선택이 아닌 의무 — 텍스트로 지키는 방법</h2>
+        <div class="rule-list" style="flex:1">
+          <div class="rule-item">
+            <div class="rule-badge">링크</div>
+            <div class="rule-body">
+              <div class="rule-title">링크 텍스트는 목적지를 설명 (WCAG 2.4.4)</div>
+              <div class="rule-ex"><span class="x">✗ 여기를 클릭 / 자세히 보기</span> &nbsp;→&nbsp; <span class="o">✓ 4월 전시 안내 전체 보기</span></div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-badge">레이블</div>
+            <div class="rule-body">
+              <div class="rule-title">입력 필드에 명시적 레이블 필수 (WCAG 1.3.1)</div>
+              <div class="rule-ex"><span class="x">✗ 플레이스홀더만 있는 검색창</span> &nbsp;→&nbsp; <span class="o">✓ "전시 검색" 레이블 + 플레이스홀더 함께</span></div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-badge">에러</div>
+            <div class="rule-body">
+              <div class="rule-title">에러 메시지는 텍스트로 명시 (WCAG 3.3.1)</div>
+              <div class="rule-ex"><span class="x">✗ 빨간 테두리만</span> &nbsp;→&nbsp; <span class="o">✓ "이메일 형식이 맞지 않습니다. 예: user@sema.kr"</span></div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-badge">대체텍스트</div>
+            <div class="rule-body">
+              <div class="rule-title">이미지에 의미 있는 대체 텍스트 (WCAG 1.1.1)</div>
+              <div class="rule-ex"><span class="x">✗ alt="" / alt="이미지"</span> &nbsp;→&nbsp; <span class="o">✓ alt="이중섭의 소 — 1954년, 국립현대미술관 소장"</span></div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-badge">폼 구조</div>
+            <div class="rule-body">
+              <div class="rule-title">입력 필드 = Label + Input + Description (LID) 구조</div>
+              <div class="rule-ex"><span class="x">✗ 플레이스홀더만</span> &nbsp;→&nbsp; <span class="o">✓ 레이블(항상 보임) + 입력창 + 도움말/에러(아래)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S12: SeMA 빈 화면 실전 -->
+    <section class="slide" id="s12a">
+      <div class="content">
+        <div class="eyebrow">04 &nbsp;·&nbsp; SeMA 실전 적용</div>
+        <h2 class="stitle">SeMA에서 자주 만나는 빈 화면 — KRDS 기준 적용</h2>
+        <table class="tbl" style="margin-bottom:16px">
+          <thead>
+            <tr>
+              <th>화면</th>
+              <th>❌ 현재</th>
+              <th>✓ KRDS 기준 (SeMA 맞춤)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>예약 내역 없음</td>
+              <td>데이터가 없습니다.</td>
+              <td>예약 내역이 아직 없어요. 원하는 전시를 찾아 첫 예약을 해보세요.</td>
+            </tr>
+            <tr>
+              <td>검색 결과 없음</td>
+              <td>검색 결과가 없습니다.</td>
+              <td>"《전시명》" 결과를 찾지 못했어요. 다른 키워드로 검색하거나 전체 전시 목록을 확인해보세요.</td>
+            </tr>
+            <tr>
+              <td>알림 없음</td>
+              <td>알림이 없습니다.</td>
+              <td>새 알림이 없어요. 관심 전시를 즐겨찾기하면 일정 변경 시 알려드려요.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <div class="callout-icon">📭</div>
+          <div class="callout-text">
+            빈 화면 공식: <strong>[현재 상태 설명] + [다음 행동 안내]</strong><br>
+            SeMA는 한 발 더 — 다음 행동이 전시 탐색으로 이어지도록 연결하세요.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S13: SeMA 가이드 한 장 -->
     <section class="slide" id="s11">
       <div class="content">
         <div class="eyebrow">04 &nbsp;·&nbsp; SeMA 적용</div>
@@ -495,7 +633,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           </div>
           <div class="guide-row">
             <div class="guide-cat">에러</div>
-            <div class="guide-val"><span class="o">✓ 상황 설명 + 왜 그런지(시스템 원인 우선) + 다음 행동</span></div>
+            <div class="guide-val"><span class="o">✓ 상황 설명 + 사용자 잘못 아님 + 다음 행동</span></div>
           </div>
           <div class="guide-row">
             <div class="guide-cat">빈 화면</div>
@@ -546,7 +684,7 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
   <nav class="nav-bar">
     <button class="nav-btn" id="btn-prev" onclick="go(-1)" disabled>← 이전</button>
     <div class="nav-center">
-      <span class="slide-counter" id="counter">01 / 12</span>
+      <span class="slide-counter" id="counter">01 / 14</span>
       <div class="nav-dots" id="dots"></div>
     </div>
     <button class="nav-btn" id="btn-next" onclick="go(1)">다음 →</button>
