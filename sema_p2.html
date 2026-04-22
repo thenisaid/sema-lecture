@@ -560,8 +560,8 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           <div class="rule-item">
             <div class="rule-badge">폼 구조</div>
             <div class="rule-body">
-              <div class="rule-title">입력 필드 = Label + Input + Description (LID) 구조</div>
-              <div class="rule-ex"><span class="x">✗ 플레이스홀더만</span> &nbsp;→&nbsp; <span class="o">✓ 레이블(항상 보임) + 입력창 + 도움말/에러(아래)</span></div>
+              <div class="rule-title">입력 필드 = 레이블(Label ID) + 입력창 + 설명/에러 구조</div>
+              <div class="rule-ex"><span class="x">✗ 플레이스홀더만</span> &nbsp;→&nbsp; <span class="o">✓ 레이블(항상 보임, Label ID로 연결) + 입력창 + 도움말/에러(아래)</span></div>
             </div>
           </div>
         </div>
@@ -572,30 +572,30 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
     <section class="slide" id="s12a">
       <div class="content">
         <div class="eyebrow">04 &nbsp;·&nbsp; SeMA 실전 적용</div>
-        <h2 class="stitle">SeMA에서 자주 만나는 빈 화면 — KRDS 기준 적용</h2>
+        <h2 class="stitle">SeMA 실제 빈 화면 — 제안 UX라이팅 적용</h2>
         <table class="tbl" style="margin-bottom:16px">
           <thead>
             <tr>
               <th>화면</th>
-              <th>❌ 현재</th>
-              <th>✓ KRDS 기준 (SeMA 맞춤)</th>
+              <th>❌ 현재 (SeMA 실제)</th>
+              <th>✓ 제안 UX라이팅</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>예약 내역 없음</td>
-              <td>데이터가 없습니다.</td>
-              <td>예약 내역이 아직 없어요. 원하는 전시를 찾아 첫 예약을 해보세요.</td>
+              <td>확정된 신청 내역 없음</td>
+              <td>확정된 신청 내역이 없습니다.</td>
+              <td>확정된 신청 내역이 아직 없어요. 원하는 프로그램을 찾아 신청해보세요.</td>
             </tr>
             <tr>
-              <td>검색 결과 없음</td>
-              <td>검색 결과가 없습니다.</td>
-              <td>"《전시명》" 결과를 찾지 못했어요. 다른 키워드로 검색하거나 전체 전시 목록을 확인해보세요.</td>
+              <td>대기 중인 신청 내역 없음</td>
+              <td>대기 중인 신청 내역이 없습니다.</td>
+              <td>대기 중인 신청이 없어요. 마감된 프로그램은 취소 시 자동으로 안내드려요.</td>
             </tr>
             <tr>
-              <td>알림 없음</td>
-              <td>알림이 없습니다.</td>
-              <td>새 알림이 없어요. 관심 전시를 즐겨찾기하면 일정 변경 시 알려드려요.</td>
+              <td>관심 전시·프로그램 없음</td>
+              <td>관심 등록한 전시와 프로그램이 없습니다.</td>
+              <td>관심 등록한 전시가 없어요. 관심 있는 전시를 저장하면 일정 변경 시 알려드려요.</td>
             </tr>
           </tbody>
         </table>
