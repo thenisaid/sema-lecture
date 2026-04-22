@@ -232,6 +232,9 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
             오늘은 SeMA에 바로 적용할 수 있는 핵심 4가지를 살펴봅니다.
           </div>
         </div>
+        <div style="margin-top:10px;padding:8px 12px;background:rgba(37,110,244,.06);border-left:3px solid #256ef4;border-radius:0 6px 6px 0;font-size:10px;color:#374151;line-height:1.5">
+          <strong style="color:#256ef4">참고</strong> KRDS는 공공기관의 <em>기본 기준</em>입니다. SeMA처럼 문화예술 성격이 강한 기관은 이 기준 위에 기관 고유의 파생 가이드를 별도로 수립할 수 있습니다.
+        </div>
       </div>
     </section>
 
@@ -560,8 +563,20 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           <div class="rule-item">
             <div class="rule-badge">폼 구조</div>
             <div class="rule-body">
-              <div class="rule-title">입력 필드 = 레이블(Label ID) + 입력창 + 설명/에러 구조</div>
-              <div class="rule-ex"><span class="x">✗ 플레이스홀더만</span> &nbsp;→&nbsp; <span class="o">✓ 레이블(항상 보임, Label ID로 연결) + 입력창 + 도움말/에러(아래)</span></div>
+              <div class="rule-title">입력 필드 LID 3단 구조 (KRDS 2.2)</div>
+              <div style="display:flex;gap:6px;margin:6px 0 4px">
+                <span style="background:#256ef4;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">L Label</span>
+                <span style="font-size:10px;color:#374151;line-height:1.4">항상 보임 · Label ID로 입력창과 연결<br><em style="color:#6b7280">"전시·작가 검색"</em></span>
+              </div>
+              <div style="display:flex;gap:6px;margin:4px 0">
+                <span style="background:#9ca3af;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">I Input hint</span>
+                <span style="font-size:10px;color:#374151;line-height:1.4">입력 전만 보임 · 입력 예시<br><em style="color:#6b7280">"예: 이중섭, 미래의 미술"</em></span>
+              </div>
+              <div style="display:flex;gap:6px;margin:4px 0">
+                <span style="background:#f59e0b;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">D Description</span>
+                <span style="font-size:10px;color:#374151;line-height:1.4">도움말·에러 (아래 표시)<br><em style="color:#6b7280">"작가명도 검색됩니다"</em></span>
+              </div>
+              <div class="rule-ex" style="margin-top:6px"><span class="x">✗ 플레이스홀더만</span> &nbsp;→&nbsp; <span class="o">✓ L(레이블) + I(힌트) + D(도움말)</span></div>
             </div>
           </div>
         </div>
