@@ -163,37 +163,36 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
       </div>
     </section>
 
-    <!-- S3: 발견 ① 다크패턴 -->
+    <!-- S3: 확인 ① 우클릭·복사 허용됨 -->
     <section class="slide" id="s3">
       <div class="content">
-        <div class="eyebrow">발견 &nbsp;①</div>
-        <h2 class="stitle">텍스트 선택·우클릭 차단</h2>
-        <div class="code-box">
-          <span class="code-label">sema.html &nbsp;L696–710</span>
-          <pre class="code-pre"><span class="code-comment">// 우클릭 완전 차단</span>
-<span class="code-fn">$</span>(document).<span class="code-key">bind</span>(<span class="code-str">"contextmenu"</span>, <span class="code-key">function</span>(e){ <span class="code-key">return false</span>; });
-
-<span class="code-comment">// 텍스트 드래그 선택 차단</span>
-<span class="code-fn">$</span>(document).<span class="code-key">bind</span>(<span class="code-str">'selectstart'</span>, <span class="code-key">function</span>(){ <span class="code-key">return false</span>; });</pre>
-        </div>
+        <div class="eyebrow">확인 &nbsp;①</div>
+        <h2 class="stitle">텍스트 선택·우클릭 — 차단 없음 ✓</h2>
         <div class="impact-grid">
-          <div class="impact-card">
-            <div class="impact-icon">🧑‍🦽</div>
-            <div class="impact-role">시각 장애인</div>
-            <div class="impact-desc">스크린리더의 텍스트 선택 기능 방해</div>
-            <div class="impact-result">접근성 침해</div>
-          </div>
-          <div class="impact-card">
+          <div class="impact-card" style="border-color:#b8d8b8;background:#f5fbf5">
             <div class="impact-icon">📋</div>
             <div class="impact-role">일반 관람객</div>
-            <div class="impact-desc">전시 날짜·제목 복사 후 일정 앱 사용 불가</div>
-            <div class="impact-result">기본 사용 차단</div>
+            <div class="impact-desc">전시 날짜·제목 자유롭게 복사 → 일정 앱 활용 가능</div>
+            <div class="impact-result" style="color:#1a6e1a">기본 사용 허용</div>
           </div>
-          <div class="impact-card">
-            <div class="impact-icon">🔓</div>
-            <div class="impact-role">실효성</div>
-            <div class="impact-desc">Ctrl+Shift+I, 브라우저 메뉴로 우회 가능</div>
-            <div class="impact-result">보호 효과 없음</div>
+          <div class="impact-card" style="border-color:#b8d8b8;background:#f5fbf5">
+            <div class="impact-icon">🧑‍🦽</div>
+            <div class="impact-role">시각 장애인</div>
+            <div class="impact-desc">스크린리더 텍스트 선택 정상 동작</div>
+            <div class="impact-result" style="color:#1a6e1a">접근성 준수</div>
+          </div>
+          <div class="impact-card" style="border-color:#b8d8b8;background:#f5fbf5">
+            <div class="impact-icon">✅</div>
+            <div class="impact-role">총평</div>
+            <div class="impact-desc">우클릭·텍스트 복사 제한 코드 없음 (현장 확인)</div>
+            <div class="impact-result" style="color:#1a6e1a">이슈 없음</div>
+          </div>
+        </div>
+        <div class="callout" style="background:#f0f8f0;border-color:#b8d8b8">
+          <div class="callout-icon">✅</div>
+          <div class="callout-text">
+            현장 확인 결과: <strong>우클릭·텍스트 선택 모두 허용 상태</strong>입니다.<br>
+            이 항목은 UX Writing 관점에서 추가 조치가 필요하지 않습니다.
           </div>
         </div>
       </div>
@@ -703,10 +702,10 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
             <div class="card-good">✓ 전체 사이트 일관성 향상</div>
           </div>
           <div class="card">
-            <div class="sev-badge sev-low">3개월</div>
-            <div class="card-head">텍스트 선택 차단 코드 제거</div>
-            <div class="card-desc">접근성 위반 및 실효성 없는 우클릭·선택 차단 코드를 제거. 개발자 작업 필요.</div>
-            <div class="card-good">✓ 접근성 개선 + 관람객 편의</div>
+            <div class="sev-badge" style="background:#2d6a2d">확인됨</div>
+            <div class="card-head">텍스트 선택·우클릭 — 이미 허용 상태</div>
+            <div class="card-desc">현장 확인 결과 우클릭·텍스트 복사 제한 코드 없음. 추가 조치 불필요.</div>
+            <div class="card-good">✓ 접근성 이미 준수 중</div>
           </div>
         </div>
         <div class="callout">
@@ -736,11 +735,11 @@ body{background:#ede9e2;overflow:hidden;height:100vh;font-family:'Pretendard Var
           </thead>
           <tbody>
             <tr>
-              <td>① 선택 차단</td>
-              <td>텍스트 복사·우클릭 불가</td>
+              <td>① 텍스트 선택</td>
+              <td>복사·우클릭 허용됨 ✓</td>
               <td>접근성(WCAG)</td>
-              <td>접근성 위반</td>
-              <td>코드 제거 (개발자)</td>
+              <td>이슈 없음</td>
+              <td>조치 불필요</td>
             </tr>
             <tr>
               <td>② 버튼 모호성</td>
